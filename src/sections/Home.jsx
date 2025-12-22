@@ -54,7 +54,7 @@ const Home = () => {
                             </span>
                         </motion.h1>
                         <p>
-                            I turn complex ideas into seamless, high-impact web exper
+                            I turn complex ideas into seamless, high-impact web experi
                         </p>
                     </div>
                 </div>

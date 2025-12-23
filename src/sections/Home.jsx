@@ -1,5 +1,40 @@
 import { motion } from 'framer-motion';
 import React, { useEffect, useMemo, useState } from 'react';
+import { FaGithub, FaTelegram } from 'react-icons/fa6';
+import { FiTwitter, FiYoutube } from 'react-icons/fi';
+import AVATAR from './../assets/avatar.jpg'
+
+const socials = [
+    { Icon: <FiTwitter />, label: "X", href: "#" },
+    { Icon: <FaTelegram />, label: "Telegram", href: "#" },
+    { Icon: <FaGithub />, label: "Github", href: "https://github.com/IPrincemishra" },
+]
+
+const glowVariants = {
+    initial: {
+        scale: 1,
+        y: 0,
+        filter: "drop-shadow(0 0 0 rgba(0,0,0,0))"
+    },
+    hover: {
+        scale: 1.2,
+        y: -3,
+        filter: "drop-shadow(0 0 8px rgba(13,88,204,0.9)) drop-shadow(0 0 18px rgba(16,185,129,0.8))",
+        transition: {
+            type: "spring",
+            stiffness: 300,
+            dampling: 15
+        }
+    },
+    tap: {
+        scale: 0.95,
+        y: 0,
+        transition: {
+            duration: 0.08
+        }
+    }
+}
+
 
 const Home = () => {
 
@@ -53,12 +88,48 @@ const Home = () => {
                                 Beat Producer
                             </span>
                         </motion.h1>
-                        <p>
-                            I turn complex ideas into seamless, high-impact web experi
-                        </p>
+                        <motion.p
+                            className='mt-4 text-base sm:text-sm md:text-lg'
+                            initial={{ opacity: 0, y: 20 }}
+                            animate={{ opacity: 1, y: 0 }}
+                            transition={{ delay: 0.4, duration: 0.8 }}
+                        >
+                            I try to make beat from scratch using one shot sample and sometimes i use catchy loop to flip that sample and turn into a banger beat.
+                        </motion.p>
+                        <motion.div
+                            className='mt-10 flex items-center justify-center lg:justify-start flex-wrap gap-5'
+                            initial={{ opacity: 0 }}
+                            animate={{ opacity: 1 }}
+                            transition={{ delay: 1, duration: 0.8 }}
+                        >
+                            <a href="#projects" className='px-6 py-3 rounded-full bg-linear-to-r font-medium text-white text-lg  from-[#103d3c] via-[#003629] to-[#17143a] transition duration-300 hover:scale-105'>View My Work</a>
+
+                            <a href="https://www.youtube.com/@iprincemishra" target="_blank" className='flex items-center gap-2 px-6 py-3 rounded-full bg-linear-to-r font-medium text-white text-lg border hover:bg-red-600 hover:border-amber-50/0 transition duration-300 hover:scale-105'><FiYoutube className='flex' /> Youtube</a>
+                        </motion.div>
+                        <div className='mt-10 flex gap-5 text-2xl md:text-3xl justify-center lg:justify-start'>
+                            {
+                                socials.map(({ Icon, label, href }) => (
+                                    <motion.a href={href} key={label} target='_blank' aria-label={label} rel='noopener noreferrer'
+                                        variants={glowVariants}
+                                        initial="initial" whileTap='tap' whileHover='hover' className='text-gray-300'
+                                    > {Icon}</motion.a>
+                                ))
+                            }
+                        </div>
                     </div>
                 </div>
 
+                <div className='relative hidden lg:flex items-center justify-center'>
+                    <motion.img
+                        src={AVATAR}
+                        alt="Badnaam"
+                        className='object-contain select-none pointer-events-none rounded-full'
+                        style={{ width: "min(25vw,450px)" }}
+                        initial={{ opacity: 0, y: 40, scale: 0.95 }}
+                        animate={{ opacity: 1, y: 0, scale: 1 }}
+                        transition={{ delay: 0.2, duration: 0.8 }}
+                    />
+                </div>
 
 
             </div>

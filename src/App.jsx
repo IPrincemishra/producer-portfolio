@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import Navbar from './components/Navbar';
 import Home from './sections/Home';
 import Skill from './sections/Skill';
@@ -9,21 +9,32 @@ import Contact from './sections/Contact';
 import Footer from './sections/Footer';
 import ParticlesBG from './components/ParticlesBG';
 import CustomCursor from './components/CustomCursor';
+import IntroAnimation from './components/IntroAnimation';
 
 const App = () => {
+  const [introDone, setIntroDone] = useState(false)
+
   return (
-    <div className='relative gradient-bg text-white'>
-      <CustomCursor />
-      <ParticlesBG />
-      <Navbar />
-      <Home />
-      <Skill />
-      <Project />
-      <Experience />
-      <Testimonials />
-      <Contact />
-      <Footer />
-    </div>
+    <>
+      {!introDone && <IntroAnimation onFinish={() => setIntroDone(true)} />}
+      {
+
+
+        <div className='relative gradient-bg text-white'>
+          <CustomCursor />
+          <ParticlesBG />
+
+          <Navbar />
+          <Home />
+          <Skill />
+          <Project />
+          <Experience />
+          <Testimonials />
+          <Contact />
+          <Footer />
+        </div>
+      }
+    </>
   );
 };
 

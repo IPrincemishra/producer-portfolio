@@ -17,7 +17,7 @@ const OverlayMenu = ({ isOpen, onClose }) => {
                     animate={{ clipPath: `circle(150% at ${origin})` }}
                     exit={{ clipPath: `circle(0% at ${origin})` }}
                     transition={{ duration: 0.7, ease: [0.4, 0, 0, 0.2] }}
-                    className="fixed inset-0 z-50 flex items-center justify-center bg-black/40 backdrop-blur-md"
+                    className="fixed inset-0 z-50 flex items-center justify-center bg-black/70 backdrop-blur-md"
                 >
 
                     <button

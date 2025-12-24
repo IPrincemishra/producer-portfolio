@@ -3,6 +3,7 @@ import React, { useEffect, useMemo, useState } from 'react';
 import { FaGithub, FaTelegram } from 'react-icons/fa6';
 import { FiTwitter, FiYoutube } from 'react-icons/fi';
 import AVATAR from './../assets/avatar.jpg'
+import ParticlesBG from '../components/ParticlesBG';
 
 const socials = [
     { Icon: <FiTwitter />, label: "X", href: "#" },
@@ -62,6 +63,7 @@ const Home = () => {
 
     return (
         <section id='home' className='w-full h-screen relative '>
+            <ParticlesBG />
             <div className='absolute inset-0'>
                 <div className='absolute -top-32 -left-32 w-[70vw] sm:w-[50vw] md:w-[40vw] h-[70vw] sm:h-[50vw] md:h-[40vw] rounded-full bg-linear-to-r from-[#302b63] via-[#00bf8f] to-[#1cd8d2] opacity-30 sm:opacity-20 md:opacity-10 blur-[100px] sm:blur-[130px] md:blur-[150px] animate-pulse' />
                 <div className='absolute bottom-0 right-0 w-[70vw] sm:w-[50vw] md:w-[40vw] h-[70vw] sm:h-[50vw] md:h-[40vw] rounded-full bg-linear-to-r from-[#302b63] via-[#00bf8f] to-[#1cd8d2] opacity-30 sm:opacity-20 md:opacity-10 blur-[100px] sm:blur-[130px] md:blur-[150px] animate-pulse delay-500' />

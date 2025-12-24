@@ -10,6 +10,8 @@ import Footer from './sections/Footer';
 import ParticlesBG from './components/ParticlesBG';
 import CustomCursor from './components/CustomCursor';
 import IntroAnimation from './components/IntroAnimation';
+import About from "./sections/About"
+
 
 const App = () => {
   const [introDone, setIntroDone] = useState(false)
@@ -18,14 +20,13 @@ const App = () => {
     <>
       {!introDone && <IntroAnimation onFinish={() => setIntroDone(true)} />}
       {
-
-
         <div className='relative gradient-bg text-white'>
           <CustomCursor />
-          <ParticlesBG />
+          {/* <ParticlesBG /> */}
 
           <Navbar />
           <Home />
+          <About />
           <Skill />
           <Project />
           <Experience />
